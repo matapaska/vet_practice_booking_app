@@ -36,6 +36,11 @@ attr_reader :id
     SqlRunner.run(sql, values)
   end
 
+  def vets()
+    vet = Vet.find_by_id(@vet_id)
+    return vet
+  end
+
   def self.delete()
     sql = "DELETE FROM animals"
     SqlRunner.run(sql)
@@ -60,7 +65,7 @@ attr_reader :id
     sql = "SELECT * FROM animals
     WHERE id = $1"
     values = [id]
-    result = SqlRunner.run(sql, values)[0]
+    result = SqlRunner.run(sql, values)
     animal = Animal.new(result)
     return animal
 

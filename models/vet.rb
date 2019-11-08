@@ -29,8 +29,6 @@ attr_reader :id
     SqlRunner.run(sql, values)
   end
 
-
-
   def animals()
     sql = "SELECT animals.* FROM animals
     INNER JOIN vets

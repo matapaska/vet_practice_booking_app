@@ -1,0 +1,13 @@
+<h1>Vets</h1>
+
+
+  <% @vets.each do |vet| %>
+
+  <div class="vet">
+    <h3><%= vet.name %></h3>
+    <p>Animals: <%= vet.animals %></p>
+
+
+  </div>
+
+  <% end %>

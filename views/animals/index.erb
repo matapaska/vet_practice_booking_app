@@ -1,0 +1,14 @@
+<h1>Animals</h1>
+
+
+  <% @animals.each do |animal| %>
+
+  <div class="animal">
+    <h3><%= animal.name %></h3>
+    <p>Type: <%= animal.type %></p>
+    <p>Vet: <%= animal.vets[0]['name'] %></p>
+
+
+  </div>
+
+  <% end %>
