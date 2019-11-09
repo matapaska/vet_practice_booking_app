@@ -15,7 +15,7 @@ CREATE TABLE animals(
 id SERIAL4 PRIMARY KEY,
 name VARCHAR(255),
 type VARCHAR(255),
-DOB VARCHAR(255),
+date_of_birth VARCHAR(255),
 owner VARCHAR(255),
 vet_id SERIAL4 REFERENCES vets(id),
 notes TEXT

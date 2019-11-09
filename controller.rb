@@ -14,7 +14,7 @@ get '/index/animals' do
 end
 
 get '/index/animals/:id' do
-  @animal =Animal.find_by_id(params['id'])
+  @animal =Animal.find_by_id(params['id'].to_i)
   erb(:'/animals/show')
 
 end

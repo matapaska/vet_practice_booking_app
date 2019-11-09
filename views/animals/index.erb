@@ -4,11 +4,10 @@
   <% @animals.each do |animal| %>
 
   <div class="animal">
-    <h3><%= animal.name %></h3>
+    <h3><a href="/index/animals/<%= animal.id%>"><%= animal.name %></a></h3>
     <p>Type: <%= animal.type %></p>
-    <p>Vet: <%= animal.vets.name %></p>
-
-
+    <p>Vet: <%= animal.vets.name %>
+    </p>
   </div>
 
   <% end %>

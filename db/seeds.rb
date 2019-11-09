@@ -22,15 +22,15 @@ vet2.save
 animal1 = Animal.new({
 "name" => "Sissy",
 "type" => "sausage dog",
-"DOB" => "13 December 2011",
-"owner" => "Dougie Dog",
+"date_of_birth" => "13 December 2011",
+"owner" => "Dougie Dogger",
 "vet_id" => vet1.id,
 "notes" => "Check up due"
 })
 animal2 = Animal.new({
 "name" => "Woolfy",
 "type" => "shepard dog",
-"DOB" => "11 December 2013",
+"date_of_birth" => "11 December 2013",
 "owner" => "Vicky Woolf",
 "vet_id" => vet1.id,
 "notes" => "Check up completed"
@@ -41,6 +41,7 @@ animal2.save
 
 # animals = Animal.find_all
 # without_animal2 = Animal.delete_by_id(animal2.id)
+
 
 binding.pry
 nil
