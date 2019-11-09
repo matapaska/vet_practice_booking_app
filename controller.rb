@@ -24,6 +24,11 @@ get '/index/vets' do
   erb(:"/vets/index")
 end
 
+post '/index/animals/:id/delete' do
+  Animal.delete_by_id(params['id'])
+  redirect to '/index/animals'
+end
+
 
 
 
