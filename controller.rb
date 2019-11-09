@@ -13,6 +13,12 @@ get '/index/animals' do
   erb(:"/animals/index")
 end
 
+get '/index/animals/:id' do
+  @animal =Animal.find_by_id(params['id'])
+  erb(:'/animals/show')
+
+end
+
 get '/index/vets' do
   @vets = Vet.find_all
   erb(:"/vets/index")

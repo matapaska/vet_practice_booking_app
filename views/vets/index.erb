@@ -5,7 +5,12 @@
 
   <div class="vet">
     <h3><%= vet.name %></h3>
-    <p>Animals: <%= vet.animals %></p>
+    <p>Animals:<br> <%vet.animals.each do |animal| %>
+        <a href="/animals/<%= animal.id %>"><%= animal.name %></a>
+                <br>
+                <% end %>
+
+    </p>
 
 
   </div>
