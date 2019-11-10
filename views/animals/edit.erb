@@ -1,37 +1,48 @@
 <h2>Edit <%= @animal.name %></h2>
-<form method="POST" action="/students/<%= @student.id %>">
+<form method="POST" action="/index/animals/<%= @animal.id %>">
   <div class="form-wrapper">
 
     <div class="form-el">
-      <label for="first_name">First Name:</label>
-      <input type="text" name="first_name" id="first_name" value="<%= @student.first_name %>"/>
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" value="<%= @animal.name %>"/>
     </div>
 
     <div class="form-el">
-      <label for="last_name">Last Name:</label>
-      <input type="text" name="last_name" id="last_name" value="<%= @student.last_name%>"/>
+      <label for="type">Type:</label>
+      <input type="text" name="type" id="type" value="<%= @animal.type %>"/>
     </div>
 
     <div class="form-el">
-      <label for="house_select">Select House:</label>
-      <select name="house_id" id="house_select" selected="<%= @student.house_id  %>">
-        <% @houses.each do |house| %>
-          <% if house.id == @student.house_id %>
-            <option value=<%= house.id %> selected><%= house.name.capitalize %></option>
+      <label for="date_of_birth">Date of birth:</label>
+      <input type="text" name="date_of_birth" id="date_of_birth" value="<%= @animal.date_of_birth %>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="owner">Owner:</label>
+      <input type="text" name="owner" id="owner" value="<%= @animal.owner %>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="notes">Treatment notes:</label>
+      <input type="text" name="notes" id="notes" value="<%= @animal.notes %>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="vet_select">Select vet:</label>
+      <select name="vet_id" id="vet_select" selected="<%= @animal.vet_id  %>">
+        <% @vets.each do |vet| %>
+          <% if vet.id == @animal.vet_id %>
+            <option value=<%= vet.id %>select><%= vet.name %></option>
           <% else %>
-            <option value=<%= house.id %>><%= house.name.capitalize %></option>
-          <% end %>
+            <option value=<%= vet.id %>><%= vet.name %></option>
+            <% end  %>
         <% end %>
       </select>
     </div>
 
-    <div class="form-el">
-      <label for="age">Age:</label>
-      <input type="number" name="age" id="age" value="<%= @student.age %>"/>
-    </div>
 
     <div class="form-el">
-      <input type="submit" value="Enrol Student"/>
+      <input type="submit" value="Register animal"/>
     </div>
 
   </div>

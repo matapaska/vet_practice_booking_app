@@ -28,6 +28,12 @@ get '/index/vets' do
   erb(:"/vets/index")
 end
 
+get '/index/animals/:id/edit' do
+  @vets = Vet.find_all
+  @animal = Animal.find_by_id(params['id'])
+  erb(:"animals/edit")
+end
+
 post '/index/animals/:id/delete' do
   Animal.delete_by_id(params['id'])
   redirect to '/index/animals'
@@ -38,15 +44,8 @@ post '/index/animals' do
   redirect to '/index/animals'
 end
 
-
-# get '/students/:id/edit' do
-#   @houses = House.all
-#   @student = Student.find(params['id'])
-#   erb(:edit)
-# end
-#
-# post '/students/:id' do
-#   student = Student.new(params)
-#   student.update
-#   redirect to "/students/#{params['id']}"
-# end
+post '/index/animals/:id' do
+  animal = Animal.new(params)
+  animal.update
+  redirect to "/index/animals/#{params['id']}"
+end

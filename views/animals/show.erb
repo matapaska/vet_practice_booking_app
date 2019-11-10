@@ -5,5 +5,5 @@
 <p>Owner: <%= @animal.owner %></p>
 <p>Treatment notes: <%= @animal.notes %></p>
 
-
+<a href="/index/animals/<%= @animal.id %>/edit">Edit</a>
 <form action="/index/animals/<%= @animal.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
