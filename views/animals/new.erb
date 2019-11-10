@@ -1,0 +1,45 @@
+<h2>Add animal</h2>
+<form method="POST" action="/index/animals">
+  <div class="form-wrapper">
+
+    <div class="form-el">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name"/>
+    </div>
+
+    <div class="form-el">
+      <label for="type">Type:</label>
+      <input type="text" name="type" id="type"/>
+    </div>
+
+    <div class="form-el">
+      <label for="date_of_birth">Date of birth:</label>
+      <input type="text" name="date_of_birth" id="date_of_birth"/>
+    </div>
+
+    <div class="form-el">
+      <label for="owner">Owner:</label>
+      <input type="text" name="owner" id="owner"/>
+    </div>
+
+    <div class="form-el">
+      <label for="notes">Treatment notes:</label>
+      <input type="text" name="notes" id="notes"/>
+    </div>
+
+    <div class="form-el">
+      <label for="vet_select">Select vet:</label>
+      <select name="vet_id" id="vet_select">
+        <% @vets.each do |vet| %>
+            <option value=<%= vet.id %>><%= vet.name %></option>
+        <% end %>
+      </select>
+    </div>
+
+
+    <div class="form-el">
+      <input type="submit" value="Register animal"/>
+    </div>
+
+  </div>
+</form>

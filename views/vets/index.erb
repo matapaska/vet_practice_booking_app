@@ -1,18 +1,18 @@
 <h1>Vets</h1>
 
 
-  <% @vets.each do |vet| %>
+    <% @vets.each do |vet| %>
 
-  <div class="vet">
-    <h3><%= vet.name %></h3>
-    <p>Animals:<br> <%vet.animals.each do |animal| %>
-        <a href="/index/animals/<%= animal.id%>"><%= animal.name %></a>
-                <br>
-                <% end %>
+    <div class="vet">
+      <h3><%= vet.name %></h3>
+      <p>Animals:<br> <%vet.animals.each do |animal| %>
+          <a href="/index/animals/<%= animal.id%>"><%= animal.name %></a>
+                  <br>
+                  <% end %>
 
-    </p>
+      </p>
 
 
-  </div>
+    </div>
 
-  <% end %>
+    <% end %>

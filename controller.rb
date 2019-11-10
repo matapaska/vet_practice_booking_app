@@ -13,10 +13,14 @@ get '/index/animals' do
   erb(:"/animals/index")
 end
 
+get '/index/animals/new' do
+  @vets = Vet.find_all
+  erb(:"animals/new")
+end
+
 get '/index/animals/:id' do
   @animal =Animal.find_by_id(params['id'].to_i)
   erb(:'/animals/show')
-
 end
 
 get '/index/vets' do
@@ -29,29 +33,12 @@ post '/index/animals/:id/delete' do
   redirect to '/index/animals'
 end
 
+post '/index/animals' do
+  Animal.new(params).save
+  redirect to '/index/animals'
+end
 
 
-
-# get '/students' do
-#   @students = Student.all
-#   erb(:index)
-# end
-#
-# get '/students/new' do
-#   @houses = House.all
-#   erb(:new)
-# end
-#
-# post '/students' do
-#   Student.new(params).save
-#   redirect to '/students'
-# end
-#
-# get '/students/:id' do
-#   @student = Student.find(params['id'])
-#   erb(:show)
-# end
-#
 # get '/students/:id/edit' do
 #   @houses = House.all
 #   @student = Student.find(params['id'])
@@ -62,10 +49,4 @@ end
 #   student = Student.new(params)
 #   student.update
 #   redirect to "/students/#{params['id']}"
-# end
-#
-# post '/students/:id/delete' do
-#   student = Student.find(params['id'])
-#   student.delete
-#   redirect to '/students'
 # end
