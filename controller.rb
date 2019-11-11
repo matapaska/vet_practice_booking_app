@@ -36,7 +36,6 @@ get '/index/owners' do
 end
 
 get '/index/owners/new' do
-
   erb(:"owners/new")
 end
 
@@ -51,6 +50,12 @@ get '/index/animals/:id/edit' do
   erb(:"animals/edit")
 end
 
+get '/index/owners/:id/edit' do
+  @owner = Owner.find_by_id(params['id'])
+  # @animal = Animal.find_by_id(params['id'])
+  erb(:"owners/edit")
+end
+
 post '/index/animals/:id/delete' do
   Animal.delete_by_id(params['id'])
   redirect to '/index/animals'
@@ -63,11 +68,17 @@ end
 
 post '/index/owners' do
   Owner.new(params).save
-  redirect to '/index/animals/'
+  redirect to '/index/owners/'
 end
 
 post '/index/animals/:id' do
   animal = Animal.new(params)
   animal.update
   redirect to "/index/animals/#{params['id']}"
+end
+
+post '/index/owners/:id' do
+  owner = Owner.new(params)
+  owner.update
+  redirect to "/index/owners/#{params['id']}"
 end
