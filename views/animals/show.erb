@@ -3,6 +3,8 @@
 <p>Type: <%= @animal.type %></p>
 <p>Date of birth: <%= @animal.date_of_birth %></p>
 <p>Owner: <a href="/index/owners/<%= @animal.owners.id%>"><%= @animal.owners.name %></a></p>
+<p>Vet: <%= @animal.vets.name %></p>
+
 <p>Treatment notes: <%= @animal.notes %></p>
 
 

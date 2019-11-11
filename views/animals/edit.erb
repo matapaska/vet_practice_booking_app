@@ -1,4 +1,4 @@
-<h2>Edit <%= @animal.name %></h2>
+<h2>Update animal details</h2>
 <form method="POST" action="/index/animals/<%= @animal.id %>">
   <div class="form-wrapper">
 
@@ -18,8 +18,16 @@
     </div>
 
     <div class="form-el">
-      <label for="owner">Owner:</label>
-      <input type="text" name="owner" id="owner" value="<%= @animal.owner %>"/>
+      <label for="owner_select">Owner:</label>
+      <select name="owner_id" id="owner_select" selected="<%= @animal.owner_id %>">
+        <% @owners.each do |owner| %>
+        <% if owner.id == @animal.owner_id %>
+            <option value=<%= owner.id %>select><%= owner.name %></option>
+        <% else %>
+            <option value=<%= owner.id %>><%= owner.name %></option>
+        <% end %>
+      <% end %>
+      </select>
     </div>
 
     <div class="form-el">
@@ -42,7 +50,7 @@
 
 
     <div class="form-el">
-      <input type="submit" value="Register animal"/>
+      <input type="submit" value="Update details"/>
     </div>
 
   </div>

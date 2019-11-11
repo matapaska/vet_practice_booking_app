@@ -46,6 +46,7 @@ end
 
 get '/index/animals/:id/edit' do
   @vets = Vet.find_all
+  @owners = Owner.find_all
   @animal = Animal.find_by_id(params['id'])
   erb(:"animals/edit")
 end
@@ -73,7 +74,7 @@ end
 
 post '/index/owners' do
   Owner.new(params).save
-  redirect to '/index/owners'
+  redirect to '/index/animals/new'
 end
 
 post '/index/animals/:id' do
