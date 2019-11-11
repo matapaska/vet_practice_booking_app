@@ -17,15 +17,10 @@
       <input type="text" name="address" id="address" value="<%= @owner.address %>"/>
     </div>
 
+
     <div class="form-el">
       <input type="submit" value="Update details"/>
     </div>
 
   </div>
 </form>
-
-<p>Animals: <% @owner.animals.each do |animal| %></p>
-              <%= animal.name %>
-              <form action="/index/animals/<%= animal.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
-              <br>
-              <% end %>

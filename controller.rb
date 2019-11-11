@@ -61,6 +61,11 @@ post '/index/animals/:id/delete' do
   redirect to '/index/animals'
 end
 
+# post '/index/owners/:id/delete' do
+#   Owner.delete_by_id(params['id'])
+#   redirect to '/index/owners'
+# end
+
 post '/index/animals' do
   Animal.new(params).save
   redirect to '/index/animals'
@@ -68,7 +73,7 @@ end
 
 post '/index/owners' do
   Owner.new(params).save
-  redirect to '/index/owners/'
+  redirect to '/index/owners'
 end
 
 post '/index/animals/:id' do
