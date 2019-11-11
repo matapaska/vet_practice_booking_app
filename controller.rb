@@ -16,6 +16,7 @@ end
 
 get '/index/animals/new' do
   @vets = Vet.find_all
+  @owners = Owner.find_all
   erb(:"animals/new")
 end
 
@@ -27,6 +28,16 @@ end
 get '/index/vets' do
   @vets = Vet.find_all
   erb(:"/vets/index")
+end
+
+get '/index/owners' do
+  @owners = Owner.find_all
+  erb(:"owners/index")
+end
+
+get '/index/owners/new' do
+
+  erb(:"owners/new")
 end
 
 get '/index/owners/:id' do
@@ -48,6 +59,11 @@ end
 post '/index/animals' do
   Animal.new(params).save
   redirect to '/index/animals'
+end
+
+post '/index/owners' do
+  Owner.new(params).save
+  redirect to '/index/animals/'
 end
 
 post '/index/animals/:id' do

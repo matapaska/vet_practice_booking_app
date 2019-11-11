@@ -17,9 +17,17 @@
       <input type="text" name="date_of_birth" id="date_of_birth"/>
     </div>
 
+    <div><a href="/index/owners/new">Add owner</a>
+    </div>
+    
     <div class="form-el">
-      <label for="owner">Owner:</label>
-      <input type="text" name="owner" id="owner"/>
+      <label for="owner_select">Owner:</label>
+      <select name="owner_id" id="owner_select">
+        <% @owners.each do |owner| %>
+            <option value=<%= owner.id %>><%= owner.name %></option>
+
+        <% end %>
+      </select>
     </div>
 
     <div class="form-el">
