@@ -4,7 +4,7 @@
     <% @owners.each do |owner| %>
 
     <div class="owner">
-      <h3><%= owner.name %></h3>
+      <h3><a href="/index/owners/<%= owner.id%>"><%= owner.name %></a></h3>
       <p>Phone number: <%= owner.phone %></p>
       <p>Address: <%= owner.address %></p>
       <p>Animals:<br> <%owner.animals.each do |animal| %>
