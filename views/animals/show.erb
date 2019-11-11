@@ -2,8 +2,11 @@
 
 <p>Type: <%= @animal.type %></p>
 <p>Date of birth: <%= @animal.date_of_birth %></p>
-<p>Owner: <%= @animal.owner %></p>
+<p>Owner: <a href="/index/owners/<%= @animal.owners.id%>"><%= @animal.owners.name %></a></p>
 <p>Treatment notes: <%= @animal.notes %></p>
+
+
+
 
 <a href="/index/animals/<%= @animal.id %>/edit">Edit</a>
 <form action="/index/animals/<%= @animal.id %>/delete" method="POST"><input type="submit" value="Delete"></form>

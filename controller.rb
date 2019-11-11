@@ -2,6 +2,7 @@ require('sinatra')
 require('sinatra/contrib/all')
 require_relative('models/animal.rb')
 require_relative('models/vet.rb')
+require_relative('models/owner.rb')
 also_reload('./models/*')
 
 get '/index' do
@@ -26,6 +27,11 @@ end
 get '/index/vets' do
   @vets = Vet.find_all
   erb(:"/vets/index")
+end
+
+get '/index/owners/:id' do
+  @owner = Owner.find_by_id(params['id'].to_i)
+  erb(:"owners/show")
 end
 
 get '/index/animals/:id/edit' do
