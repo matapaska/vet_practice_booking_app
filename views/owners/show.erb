@@ -2,4 +2,9 @@
 
 <p>Phone number: <%= @owner.phone %></p>
 <p>Address: <%= @owner.address %></p>
-<p>Owner: <a href="/index/animals/<%= @owner.animals.id%>"><%= @owner.animals.name %></a></p>
+<p>Animals: <% @owner.animals.each do |animal| %></p>
+              <%= animal.name %>
+              <br>
+              <% end %>
+
+<a href="/index/owners/<%= @owner.id %>/edit">Edit</a>
