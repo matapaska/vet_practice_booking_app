@@ -3,7 +3,7 @@ require_relative('../db/sql_runner.rb')
 
 class Animal
 
-attr_accessor :name, :type, :date_of_birth, :owner_id, :vet_id, :notes
+attr_accessor :name, :type, :date_of_birth, :owner_id, :vet_id, :notes_id
 attr_reader :id
 
   def initialize(options)
@@ -13,26 +13,26 @@ attr_reader :id
     @date_of_birth = options['date_of_birth']
     @owner_id = options['owner_id'].to_i
     @vet_id = options['vet_id'].to_i
-    @notes = options['notes']
+    @notes_id = options['notes_id']
 
   end
 
   def save()
     sql ="INSERT INTO animals(
-    name, type, date_of_birth, owner_id, vet_id, notes)
+    name, type, date_of_birth, owner_id, vet_id, notes_id)
     VALUES($1, $2, $3, $4, $5, $6)
-    RETURNING*"
-    values = [@name, @type, @date_of_birth, @owner_id, @vet_id, @notes]
+    RETURNING *"
+    values = [@name, @type, @date_of_birth, @owner_id, @vet_id, @notes_id]
     result = SqlRunner.run(sql, values)
     @id = result[0]['id'].to_i
   end
 
   def update()
     sql = "UPDATE animals
-    SET (name, type, date_of_birth, owner_id, vet_id, notes)
+    SET (name, type, date_of_birth, owner_id, vet_id, notes_id)
     = ($1, $2, $3, $4, $5, $6)
     WHERE id = $7"
-    values = [@name, @type, @date_of_birth, @owner_id, @vet_id, @notes, @id]
+    values = [@name, @type, @date_of_birth, @owner_id, @vet_id, @notes_id, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -45,7 +45,12 @@ attr_reader :id
     owner = Owner.find_by_id(@owner_id)
     return owner
   end
-  
+
+  def notes()
+    note = Note.find_by_id(@notes_id)
+    return note
+  end
+
   def self.delete()
     sql = "DELETE FROM animals"
     SqlRunner.run(sql)
