@@ -44,6 +44,10 @@ get '/index/owners/:id' do
   @owner = Owner.find_by_id(params['id'].to_i)
   erb(:"owners/show")
 end
+get '/index/notes/:id' do
+  @note = Note.find_by_id(params['id'].to_i)
+  erb(:"notes/show")
+end
 
 get '/index/animals/:id/edit' do
   @vets = Vet.find_all

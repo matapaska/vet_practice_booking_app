@@ -29,6 +29,17 @@ attr_reader :id
     SqlRunner.run(sql, values)
   end
 
+  def animals()
+    sql = "SELECT animals.* FROM animals
+    INNER JOIN notes
+    ON notes.id = animals.notes_id
+    WHERE notes.id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    note = result.map{|note| Animal.new(note)}
+    return note
+  end
+
 
   def self.find_all()
     sql = "SELECT * FROM notes"
