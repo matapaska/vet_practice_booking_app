@@ -4,7 +4,7 @@
 
     <div class="form-el">
       <label for="details">Notes:</label>
-      <input type="text" name="details" id="details" value="<%= @note.details %>"/>
+      <input type="text" name="details" id="details" style="height:100px;width:200px;" value="<%= @note.details %>"/>
     </div>
 
     <div class="form-el">
@@ -13,3 +13,8 @@
 
   </div>
 </form>
+<p>
+<% @note.animals.each do |animal|  %>
+<a href="/index/animals/<%= animal.id%>">
+  <% end %>
+</p>

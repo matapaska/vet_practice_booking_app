@@ -7,5 +7,5 @@
 <p><a href="/index/notes/<%= @animal.notes_id %>">Treatment notes: </a><%= @animal.notes.details%></p>
 
 
-
+<a href="/index/animals/<%= @animal.id %>/edit">Update animal details</a>
 <form action="/index/animals/<%= @animal.id %>/delete" method="POST"><input type="submit" value="Delete"></form>

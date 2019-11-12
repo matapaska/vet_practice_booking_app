@@ -1,3 +1,5 @@
+<a href="/index/animals/new">Register animal</a>
+
 <h1>Animals</h1>
 
 
@@ -7,10 +9,8 @@
     <h3><a href="/index/animals/<%= animal.id%>"><%= animal.name %></a></h3>
     <p>Type: <%= animal.type %></p>
     <p>Vet: <%= animal.vets.name %></p>
-    <p>Owner: <a href="/index/owners/<%= animal.owners.id%>"><%= animal.owners.name %></p></a>
+    <p>Owner: <a href="/index/owners/<%= animal.owners.id%>"><%= animal.owners.name %></a></p>
 
   </div>
 
   <% end %>
-
-  <a href="/index/animals/new">Register animal</a>
