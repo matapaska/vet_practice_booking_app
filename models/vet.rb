@@ -22,8 +22,8 @@ attr_reader :id
 
   def update()
     sql = "UPDATE vets
-    SET(name)
-    = ($1)
+    SET name
+    = $1
     WHERE id = $2"
     values = [@name, @id]
     SqlRunner.run(sql, values)

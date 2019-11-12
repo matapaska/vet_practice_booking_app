@@ -49,6 +49,12 @@ get '/index/notes/:id' do
   erb(:"notes/show")
 end
 
+get '/index/notes/:id/edit' do
+  @note = Note.find_by_id(params['id'])
+  # @animal = Animal.find_by_id(params['id'])
+  erb(:"notes/edit")
+end
+
 get '/index/animals/:id/edit' do
   @vets = Vet.find_all
   @owners = Owner.find_all
@@ -92,4 +98,10 @@ post '/index/owners/:id' do
   owner = Owner.new(params)
   owner.update
   redirect to "/index/owners/#{params['id']}"
+end
+
+post '/index/notes/:id' do
+  note = Note.new(params)
+  note.update
+  redirect to "/index/notes/#{params['id']}"
 end
