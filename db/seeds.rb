@@ -1,13 +1,13 @@
 require_relative( "../models/animal.rb" )
 require_relative( "../models/vet.rb" )
 require_relative( "../models/owner.rb" )
-require_relative( "../models/note.rb" )
+
 require("pry-byebug")
 
 Animal.delete
 Vet.delete
 Owner.delete
-Note.delete
+
 
 
 vet1 = Vet.new({
@@ -40,22 +40,6 @@ owner2 = Owner.new({
   owners = Owner.find_all
 
 
-  note1 = Note.new({
-    "details" => "Needs to come back urgently"
-    })
-
-  note2 = Note.new({
-    "details" => "Asked to call back tomorrow"
-    })
-
-  note3 = Note.new({
-    "details" => "Results sent"
-    })
-
-  note1.save
-  note2.save
-  note3.save
-
 
 animal1 = Animal.new({
 "name" => "Sissy",
@@ -63,7 +47,7 @@ animal1 = Animal.new({
 "date_of_birth" => "13 December 2011",
 "owner_id" => owner1.id,
 "vet_id" => vet1.id,
-"notes_id" => note1.id
+"notes" => "Results awaiting"
 })
 animal2 = Animal.new({
 "name" => "Woolfy",
@@ -71,7 +55,7 @@ animal2 = Animal.new({
 "date_of_birth" => "11 December 2013",
 "owner_id" => owner2.id,
 "vet_id" => vet1.id,
-"notes_id" => note2.id
+"notes" => "Call back"
 })
 
 animal1.save

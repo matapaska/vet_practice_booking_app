@@ -36,9 +36,10 @@ attr_reader :id
     WHERE vets.id = $1"
     values = [@id]
     result = SqlRunner.run(sql, values)
-    animal = result.map{|animal| Animal.new(animal)}
-    return animal
+    animals = result.map{|animal| Animal.new(animal)}
+    return animals
   end
+
 
   def self.find_all()
     sql = "SELECT * FROM vets"

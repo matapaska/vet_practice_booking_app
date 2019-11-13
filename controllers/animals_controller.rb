@@ -3,7 +3,6 @@ require('sinatra/contrib/all')
 require_relative('../models/animal.rb')
 require_relative('../models/vet.rb')
 require_relative('../models/owner.rb')
-require_relative('../models/note.rb')
 also_reload('../models/*')
 
 
@@ -18,6 +17,11 @@ get '/index/animals/new' do
   erb(:"animals/new")
 end
 
+post '/index/animals' do
+  Animal.new(params).save
+  redirect to '/index/animals'
+end
+
 get '/index/animals/:id' do
   @animal =Animal.find_by_id(params['id'].to_i)
   erb(:'/animals/show')
@@ -30,18 +34,13 @@ get '/index/animals/:id/edit' do
   erb(:"animals/edit")
 end
 
-post '/index/animals/:id/delete' do
-  Animal.delete_by_id(params['id'])
-  redirect to '/index/animals'
-end
-
-post '/index/animals' do
-  Animal.new(params).save
-  redirect to '/index/animals'
-end
-
 post '/index/animals/:id' do
   animal = Animal.new(params)
   animal.update
   redirect to "/index/animals/#{params['id']}"
+end
+
+post '/index/animals/:id/delete' do
+  Animal.delete_by_id(params['id'])
+  redirect to '/index/animals'
 end

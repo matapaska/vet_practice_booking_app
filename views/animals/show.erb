@@ -4,7 +4,7 @@
 <p>Date of birth: <%= @animal.date_of_birth %></p>
 <p>Owner: <a href="/index/owners/<%= @animal.owners.id%>"><%= @animal.owners.name %></a></p>
 <p>Vet: <%= @animal.vets.name %></p>
-<p><a href="/index/notes/<%= @animal.notes_id %>">Treatment notes: </a><%= @animal.notes.details%></p>
+<p>Treatment notes: <%= @animal.notes%></p>
 
 
 <a href="/index/animals/<%= @animal.id %>/edit">Update animal details</a>

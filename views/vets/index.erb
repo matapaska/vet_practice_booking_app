@@ -5,13 +5,15 @@
 
     <div class="vet">
       <h3><%= vet.name %></h3>
+
       <p>Animals:<br> <%vet.animals.each do |animal| %>
-          <a href="/index/animals/<%= animal.id%>"><%= animal.name %></a>
-                  <br>
-                  <% end %>
-
-      </p>
-
+          <a href="/index/animals/<%= animal.id%>"><%= animal.name %></a><br>
+          <% end %></p>
+      <% no_of_animals = [] %>
+      <p>Number of animals: <%vet.animals.each do |animal| %>
+        <% no_of_animals.push(animal) %>
+        <% end %>
+        <%= no_of_animals.size %>
 
     </div>
 

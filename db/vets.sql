@@ -1,13 +1,6 @@
 DROP TABLE IF EXISTS animals;
 DROP TABLE IF EXISTS vets;
 DROP TABLE IF EXISTS owners;
-DROP TABLE IF EXISTS notes;
-
-
-CREATE TABLE notes(
-  id SERIAL4 PRIMARY KEY,
-  details TEXT
-);
 
 
 CREATE TABLE owners(
@@ -31,5 +24,5 @@ type VARCHAR(255),
 date_of_birth VARCHAR(255),
 owner_id SERIAL4 REFERENCES owners(id) ON DELETE CASCADE,
 vet_id SERIAL4 REFERENCES vets(id) ON DELETE CASCADE,
-notes_id SERIAL4 REFERENCES notes(id) ON DELETE CASCADE
+notes TEXT
 );

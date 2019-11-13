@@ -30,10 +30,7 @@
       </select>
     </div>
 
-    <div class="form-el">
-      <label for="notes">Treatment notes:</label>
-      <input type="text" name="notes" id="notes" value="<%= @animal.notes %>"/>
-    </div>
+
 
     <div class="form-el">
       <label for="vet_select">Select vet:</label>
@@ -48,6 +45,10 @@
       </select>
     </div>
 
+    <div class="form-el">
+      <label for="notes">Treatment notes:</label>
+      <input type="text" name="notes" id="notes" value="<%= @animal.type %>"/>
+    </div>
 
     <div class="form-el">
       <input type="submit" value="Update details"/>
