@@ -1,20 +1,20 @@
-<h1>Owners</h1>
-
+<h3>Owners:</h3>
+<div class="indexData">
 
     <% @owners.each do |owner| %>
 
-    <div class="owner">
-      <h3><a href="/index/owners/<%= owner.id%>"><%= owner.name %></a></h3>
-      <p>Phone number: <%= owner.phone %></p>
-      <p>Address: <%= owner.address %></p>
-      <p>Animals:<br> <%owner.animals.each do |animal| %>
-          <a href="/index/animals/<%= animal.id%>"><%= animal.name %></a>
-                  <br>
+
+      <h4><a href="/index/owners/<%= owner.id%>"><span id = "name"><%= owner.name %></span></a></h4>
+      <p><span>Phone number:</span> <%= owner.phone %></p>
+      <p><span>Address: </span><%= owner.address %></p>
+      <p><span>Animals: </span> <%owner.animals.each do |animal| %>
+          <a href="/index/animals/<%= animal.id%>"><span id = "name"><%= animal.name %></span></a>
+
                   <% end %>
 
       </p>
 
+</div>
 
-    </div>
 
     <% end %>

@@ -1,11 +1,17 @@
+
+<div class="showData">
+
+
 <h2><%= @animal.name %></h2>
 
-<p>Type: <%= @animal.type %></p>
-<p>Date of birth: <%= @animal.date_of_birth %></p>
-<p>Owner: <a href="/index/owners/<%= @animal.owners.id%>"><%= @animal.owners.name %></a></p>
-<p>Vet: <%= @animal.vets.name %></p>
-<p>Treatment notes: <%= @animal.notes%></p>
+<p>Type: <span><%= @animal.type %></span></p>
+<p>Date of birth: <span><%= @animal.date_of_birth %></span></p>
+<p>Owner: <span><a href="/index/owners/<%= @animal.owners.id%>"><%= @animal.owners.name %></a></span></p>
+<p>Vet: <span><%= @animal.vets.name %></span></p>
+<p>Treatment notes: <span><%= @animal.notes%></span></p>
 
+</div>
+<br><br>
 
 <a href="/index/animals/<%= @animal.id %>/edit">Update animal details</a>
 <form action="/index/animals/<%= @animal.id %>/delete" method="POST"><input type="submit" value="Delete"></form>

@@ -2,7 +2,11 @@ head {
   color: black;
 }
 
-
+title {
+  display: flex;
+  align-content: space-around;
+  justify-content: center;
+}
 
 body {
   padding: 30px;
@@ -10,7 +14,30 @@ body {
   color: black;
 
 }
+main {
+  padding: 25px;
+}
 
+section{
+  display: block;
+}
+
+nav {
+  padding: 0px;
+  margin: 0px;
+  padding-right: 25px;
+}
+
+nav ul li {
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+ul.navMenu {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
 a {
   text-decoration: none;
   color: black;
@@ -20,20 +47,49 @@ a:hover {
   color: darkred;
 }
 
-
-
-.form-el {
-  margin: 10px 0;
+h1#logo {
+    text-align: center;
+}
+.indexData p {
+    border-bottom: 1px ;
+    padding-bottom: 4px;
+}
+.indexData p span {
+    font-weight: bold;
 }
 
-.form-wrapper .form-el input[type="submit" i] {
-  margin-left: 180px;
+.showData p {
+    border-bottom: 1px solid gainsboro;
+    padding-bottom: 4px;
+}
+.showData p span {
+    font-weight: bold;
+}
+#name {
+    color: darkred;
+}
+#animal_name {
+    color: blue;
+    font-size: 20px;
+}
+.form-el{
+  border-bottom: 2px ;
+  padding-bottom: 16px;
+}
+form label{
+  font-weight: 500;
+}
+.form-el input{
+  width: 200px;
+
+}
+#notes{
+  height: 100px;
 }
 
-.form-wrapper .form-el label {
-  text-align: right;
-  display: inline-block;
-  vertical-align: middle;
-  width: 160px;
-  margin: 0 1em 0 0;
+.link{
+  font-weight: bold;
+  font-size: 20px;
+  padding-bottom: 20px;
+  color: darkgray;
 }

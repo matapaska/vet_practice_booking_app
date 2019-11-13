@@ -1,20 +1,19 @@
-<h1>Vets</h1>
+<h3>Vets</h3>
 
-
+<div class="indexData">
     <% @vets.each do |vet| %>
 
-    <div class="vet">
-      <h3><%= vet.name %></h3>
 
-      <p>Animals:<br> <%vet.animals.each do |animal| %>
+      <h4><span id = "name"><%= vet.name %></span></h4>
+
+      <p>Animals: <%vet.animals.each do |animal| %>
           <a href="/index/animals/<%= animal.id%>"><%= animal.name %></a><br>
           <% end %></p>
       <% no_of_animals = [] %>
       <p>Number of animals: <%vet.animals.each do |animal| %>
         <% no_of_animals.push(animal) %>
         <% end %>
-        <%= no_of_animals.size %>
-
-    </div>
+        <%= no_of_animals.size %></p>
+</div>
 
     <% end %>

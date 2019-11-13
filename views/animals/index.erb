@@ -1,16 +1,17 @@
-<a href="/index/animals/new">Register animal</a>
-
-<h1>Animals</h1>
+<a class="link" href="/index/animals/new">Register animal</a>
+<h3>Animals:</h3>
+<div class="indexData">
 
 
   <% @animals.each do |animal| %>
 
-  <div class="animal">
-    <h3><a href="/index/animals/<%= animal.id%>"><%= animal.name %></a></h3>
-    <p>Type: <%= animal.type %></p>
-    <p>Vet: <%= animal.vets.name %></p>
-    <p>Owner: <a href="/index/owners/<%= animal.owners.id%>"><%= animal.owners.name %></a></p>
+    <h4><a href="/index/animals/<%= animal.id%>"><span id = "animal_name"><%= animal.name %></span></a></h4>
+    <p><span>Type: </span><%= animal.type %></p>
+    <p><span>Vet:</span> <span id = "name"><%= animal.vets.name %></span></p>
+    <p><span>Owner:</span> <a href="/index/owners/<%= animal.owners.id%>"><span id = "name"><%= animal.owners.name %></span></a></p>
+<br>
 
-  </div>
 
   <% end %>
+
+  </div>
