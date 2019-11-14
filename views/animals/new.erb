@@ -1,12 +1,22 @@
-<h2>Add animal</h2>
+<h3>Add animal's details:</h3>
 
 <form method="POST" action="/index/animals">
   <div class="form-wrapper">
 
-    <div><a class ="link" href="/index/owners/new">Add owner</a></div>
+    <div class="form-el">
+      <label for="owner_select">Select owner:</label>
+      <select name="owner_id" id="owner_select">
+        <% @owners.each do |owner| %>
+            <option value=<%= owner.id %>><%= owner.name %></option>
+
+        <% end %>
+      </select>
+    </div>
+    <div>or</div><br>
+    <div><a id="button" href="/index/owners/new">Add new owner's details</a></div><br><br>
 
     <div class="form-el">
-      <label for="name">Name:</label>
+      <label for="name">Animal's name:</label>
       <input type="text" name="name" id="name"/>
     </div>
 
@@ -21,21 +31,6 @@
     </div>
 
     <div class="form-el">
-      <label for="owner_select">Owner:</label>
-      <select name="owner_id" id="owner_select">
-        <% @owners.each do |owner| %>
-            <option value=<%= owner.id %>><%= owner.name %></option>
-
-        <% end %>
-      </select>
-    </div>
-
-    <div class="form-el" id = "notes">
-      <label for="notes">Treatment notes:</label>
-      <input type="text" name="notes" id="notes"/>
-    </div>
-
-    <div class="form-el">
       <label for="vet_select">Select vet:</label>
       <select name="vet_id" id="vet_select">
         <% @vets.each do |vet| %>
@@ -44,6 +39,10 @@
       </select>
     </div>
 
+    <div class="form-el" id = "notes">
+      <label for="notes">Treatment notes:</label>
+      <input type="text" name="notes" id="notes"/>
+    </div>
 
     <div >
       <input type="submit" value="Register animal"/>

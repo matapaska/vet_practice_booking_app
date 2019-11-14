@@ -31,13 +31,12 @@ end
 
 get '/index/owners/:id/edit' do
   @owner = Owner.find_by_id(params['id'])
-
   erb(:"owners/edit")
 end
 
 post '/index/owners/:id/delete' do
   @owner = Owner.find_by_id(params['id'].to_i)
-  if @owner.animals.length
+  if @owner.animals.length > 0
     redirect to '/index/owners/no_go'
   else
     Owner.delete_by_id(params['id'])

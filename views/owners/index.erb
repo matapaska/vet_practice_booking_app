@@ -1,14 +1,14 @@
-<h3>Owners:</h3>
+<h3>OWNERS:</h3>
 <div class="indexData">
 
     <% @owners.each do |owner| %>
 
 
-      <h4><a href="/index/owners/<%= owner.id%>"><span id = "name"><%= owner.name %></span></a></h4>
+      <h4><a href="/index/owners/<%= owner.id%>"><span id = "owner_color"><%= owner.name %></span></a></h4>
       <p><span>Phone number:</span> <%= owner.phone %></p>
       <p><span>Address: </span><%= owner.address %></p>
       <p><span>Animals: </span> <%owner.animals.each do |animal| %>
-          <a href="/index/animals/<%= animal.id%>"><span id = "name"><%= animal.name %></span></a>
+          <a href="/index/animals/<%= animal.id%>"><span id = "animal_color"><%= animal.name %></span></a>
 
                   <% end %>
 

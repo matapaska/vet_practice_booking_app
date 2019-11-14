@@ -2,16 +2,16 @@
 <div class="showData">
 
 
-<h2><%= @animal.name %></h2>
+<h2><span id="animal_color"><%= @animal.name.capitalize %></span></h2>
 
-<p>Type: <span><%= @animal.type %></span></p>
+<p>Type: <span><%= @animal.type.capitalize %></span></p>
 <p>Date of birth: <span><%= @animal.date_of_birth %></span></p>
-<p>Owner: <span><a href="/index/owners/<%= @animal.owners.id%>"><%= @animal.owners.name %></a></span></p>
-<p>Vet: <span><%= @animal.vets.name %></span></p>
+<p>Owner: <a href="/index/owners/<%= @animal.owners.id%>"><span id="owner_color"><%= @animal.owners.name %></span></a></p>
+<p>Vet: <span id="vet_color"><%= @animal.vets.name %></span></p>
 <p>Treatment notes: <span><%= @animal.notes%></span></p>
 
 </div>
 <br><br>
 
-<a href="/index/animals/<%= @animal.id %>/edit">Update animal details</a>
+<a id="button" href="/index/animals/<%= @animal.id %>/edit">Update animal details</a><br><br>
 <form action="/index/animals/<%= @animal.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
