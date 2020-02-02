@@ -19,7 +19,7 @@ It allows user to register, look up, edit and remove animals from the practice r
 
 
 <h3>Front End</h3>
-<p>Now run the app, in the project directory run:</p>
+<p>Now, in the project directory run:</p>
 
     ruby app.rb
 
