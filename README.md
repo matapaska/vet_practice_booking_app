@@ -1,6 +1,8 @@
 # vet_practice_booking_app
-<p>This is a CodeClan project to create a Vet Practice booking/admin app using Ruby and Sinatra</p>
+<p>This is a CodeClan project to create a Vet Practice booking/admin app using Ruby, Sinatra and PostgreSQL.
+It allows user to register, look up, edit and remove animals from the practice register. </p>
 
+<h2>This is a simple guide to set up the app</h2>
 <h3>Required installations</h3>
 <p>Sinatra Web Framework, PostgreSQL, the minitest gem and the pry gem.</p>
 
@@ -13,7 +15,7 @@
 <h3>Populate the database</h3>
 <p>In the terminal, in the project directory run:</p>
      
-	ruby db/seeds.rb
+    ruby db/seeds.rb
 
 
 <h3>Front End</h3>
