@@ -21,7 +21,7 @@ It allows user to register, look up, edit and remove animals from the practice r
 <h3>Front End</h3>
 <p>Now, in the project directory run:</p>
 
-    ruby app.rb
+    ruby app_controller.rb
 
 <h3>Access the webpage</h3>
 <p>You can now access running application at
