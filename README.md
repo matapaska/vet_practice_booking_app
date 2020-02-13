@@ -10,12 +10,15 @@ It allows user to register, look up, edit and remove animals from the practice r
 <p>In the terminal run:</p>
 
     createdb vets
-
+<p>Create tables</p>
+    
+    cd db
+    psql -d vets -f vets.sql
 
 <h3>Populate the database</h3>
-<p>In the terminal, in the project directory run:</p>
+<p>In the terminal, still in the db directory run:</p>
      
-    ruby db/seeds.rb
+    ruby seeds.rb
 
 
 <h3>Front End</h3>
